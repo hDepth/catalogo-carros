@@ -8,7 +8,7 @@ Bem-vindo ao **Catálogo de Carros API**! 🚀 Este projeto foi desenvolvido uti
 ✅ Consulta de um veículo específico por ID 🆔  
 ✅ Atualização de informações de um carro 🔄  
 ✅ Remoção de veículos ❌  
-✅ Suporte para veículos de combustão e elétricos ⚡⛽ 
+✅ Suporte para veículos de combustão e elétricos ⚡⛽
 ✅ Testes unitários 🧪  
 
 ---
