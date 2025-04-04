@@ -24,6 +24,24 @@ Bem-vindo ao **Catálogo de Carros API**! 🚀 Este projeto foi desenvolvido uti
 
 ---
 
+⚙️ Configuração do Banco de Dados
+
+A API utiliza o H2 Database como banco de dados em memória. Para facilitar a inicialização, há um arquivo data.sql que contém 25 registros de carros que serão inseridos automaticamente ao iniciar a aplicação. (Caso nao ocorra o insert automático, faça-o manualmente)
+
+Caso deseje utilizar outro banco de dados, edite as configurações no arquivo application.properties:
+spring.datasource.url=jdbc:h2:mem:carcatalog
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+spring.datasource.initialization-mode=always
+spring.sql.init.mode=always
+spring.jpa.hibernate.ddl-auto=create
+
+Caso prefira um banco persistente (exemplo: MySQL, PostgreSQL), substitua as configurações acima pelos dados do seu banco e desative o data.sql.
+
 ## 🚀 Como Executar o Projeto
 
 ### 🔧 Pré-requisitos
