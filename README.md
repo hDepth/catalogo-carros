@@ -128,5 +128,5 @@ Fique à vontade para contribuir com melhorias! Para isso:
 
 ---
 
-🚀 **Desenvolvido com 💙 por Pedro Henrique Jorge De Paula (https://github.com/hDepth)**
+🚀 **Desenvolvido com 💙 por Pedro Henrique Jorge De Paula (https://github.com/hDepth) Para fins acadêmicos**
 
