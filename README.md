@@ -35,7 +35,7 @@ Antes de rodar o projeto, certifique-se de ter instalado:
 ### 💻 Rodando a API
 1️⃣ Clone este repositório:
 ```sh
-git clone https://github.com/seu-usuario/catalogo-carros.git
+git clone https://github.com/hDepth/catalogo-carros.git
 cd catalogo-carros
 ```
 
