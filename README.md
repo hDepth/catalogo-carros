@@ -24,7 +24,7 @@ Bem-vindo ao **Catálogo de Carros API**! 🚀 Este projeto foi desenvolvido uti
 
 ---
 
-⚙️ Configuração do Banco de Dados
+## ⚙️ Configuração do Banco de Dados
 
 A API utiliza o H2 Database como banco de dados em memória. Para facilitar a inicialização, há um arquivo data.sql que contém 25 registros de carros que serão inseridos automaticamente ao iniciar a aplicação. (Caso nao ocorra o insert automático, faça-o manualmente)
 
