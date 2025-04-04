@@ -1,0 +1,27 @@
+//Aparentemente o IntelJ Comunity não permite que eu faça um data.sql que gere automaticamente os inserts no H2-DATABASE assim que eu rodo a API por que ele nao suporta... Maldito Capitalismo
+//E eu nao sei o que eu fiz de errado mas o spring boot nao fez funcionar o data.sql no H2
+INSERT INTO carros (id, marca, modelo, ano, potencia, economia, tipo, preco) VALUES
+  (random_uuid(), 'Toyota', 'Corolla', 2022, 168, 12.5, 'combustao', 120000),
+  (random_uuid(), 'Honda', 'Civic', 2023, 180, 13.2, 'combustao', 130000),
+  (random_uuid(), 'Ford', 'Mustang', 2021, 450, 7.5, 'combustao', 350000),
+  (random_uuid(), 'Chevrolet', 'Camaro', 2022, 455, 8.0, 'combustao', 360000),
+  (random_uuid(), 'Tesla', 'Model S', 2023, 1020, 20.0, 'eletrico', 600000),
+  (random_uuid(), 'BMW', 'iX', 2023, 516, 21.5, 'eletrico', 550000),
+  (random_uuid(), 'Audi', 'e-tron', 2022, 402, 19.0, 'eletrico', 500000),
+  (random_uuid(), 'Mercedes', 'EQC', 2022, 408, 18.5, 'eletrico', 520000),
+  (random_uuid(), 'Volkswagen', 'Golf GTE', 2023, 245, 15.0, 'hibrido', 200000),
+  (random_uuid(), 'Toyota', 'Prius', 2022, 121, 20.5, 'hibrido', 150000),
+  (random_uuid(), 'Hyundai', 'Ioniq', 2023, 134, 21.0, 'hibrido', 160000),
+  (random_uuid(), 'Nissan', 'Leaf', 2023, 214, 17.5, 'eletrico', 220000),
+  (random_uuid(), 'Porsche', 'Taycan', 2023, 750, 19.2, 'eletrico', 700000),
+  (random_uuid(), 'Jaguar', 'I-PACE', 2022, 394, 19.8, 'eletrico', 480000),
+  (random_uuid(), 'Volvo', 'XC40 Recharge', 2023, 408, 18.3, 'eletrico', 470000),
+  (random_uuid(), 'Kia', 'EV6', 2023, 577, 19.5, 'eletrico', 490000),
+  (random_uuid(), 'Renault', 'Zoe', 2022, 135, 22.0, 'eletrico', 180000),
+  (random_uuid(), 'Peugeot', 'e-208', 2023, 136, 21.8, 'eletrico', 190000),
+  (random_uuid(), 'Fiat', '500e', 2023, 118, 23.0, 'eletrico', 170000),
+  (random_uuid(), 'Chevrolet', 'Bolt', 2023, 200, 20.5, 'eletrico', 230000),
+  (random_uuid(), 'Mazda', 'MX-30', 2023, 143, 21.0, 'eletrico', 240000),
+  (random_uuid(), 'Subaru', 'Solterra', 2023, 215, 18.9, 'eletrico', 260000),
+  (random_uuid(), 'Ford', 'F-150 Lightning', 2023, 563, 17.8, 'eletrico', 500000),
+  (random_uuid(), 'Lucid', 'Air', 2023, 1111, 21.2, 'eletrico', 800000);
