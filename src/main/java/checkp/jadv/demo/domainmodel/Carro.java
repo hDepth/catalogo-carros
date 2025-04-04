@@ -10,21 +10,34 @@ public class Carro {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    @Column(nullable = false)
     private String marca;
+
+    @Column(nullable = false)
     private String modelo;
+
+    @Column(nullable = false)
     private int ano;
+
+    @Column(nullable = false)
     private int potencia;
+
+    @Column(nullable = false)
     private double economia;
+
+    @Column(nullable = false)
     private String tipo;
+
+    @Column(nullable = false)
     private double preco;
 
-    // Construtor sem argumentos (necessário para JPA)
+    // Construtor padrão (necessário para JPA)
     public Carro() {
     }
 
-    // Construtor com todos os atributos
-    public Carro(UUID id, String marca, String modelo, int ano, int potencia, double economia, String tipo, double preco) {
-        this.id = id;
+    // Construtor sem ID (o banco de dados gera automaticamente)
+    public Carro(String marca, String modelo, int ano, int potencia, double economia, String tipo, double preco) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
@@ -34,13 +47,9 @@ public class Carro {
         this.preco = preco;
     }
 
-    // Getters e Setters (caso ainda não tenha)
+    // Getters e Setters
     public UUID getId() {
         return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public String getMarca() {

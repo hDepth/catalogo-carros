@@ -11,4 +11,6 @@ public interface CarroRepository extends JpaRepository<Carro, UUID> {
     List<Carro> findTop10ByOrderByPotenciaDesc();
     List<Carro> findTop10ByOrderByEconomiaDesc();
     List<Carro> findByTipo(String tipo);
+    List<Carro> findByModelo(String modelo); // Adicionado para os testes
+    List<Carro> findByAno(int ano); // Adicionado para os testes
 }

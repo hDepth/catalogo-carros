@@ -54,7 +54,6 @@ public class CarroController {
         if (!service.buscarPorId(id).isPresent()) {
             throw new NoSuchElementException("Carro com ID " + id + " não encontrado.");
         }
-        carro.setId(id);
         return ResponseEntity.ok(service.salvar(carro));
     }
 

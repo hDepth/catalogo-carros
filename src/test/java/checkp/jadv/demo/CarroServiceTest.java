@@ -15,6 +15,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -71,29 +72,78 @@ class CarroServiceTest {
 	}
 
 	@Test
+	void testBuscarCarroPorIdInvalido() {
+		Optional<Carro> carro = service.buscarPorId(UUID.randomUUID());
+		assertThat(carro).isEmpty();
+	}
+
+	@Test
 	void testListarTodosOsCarros() {
 		List<Carro> carros = service.listarTodos();
-
 		assertThat(carros).isNotEmpty();
-		assertThat(carros.size()).isEqualTo(1); // Apenas 1 carro inserido no @BeforeEach
+		assertThat(carros.size()).isEqualTo(1);
 	}
 
 	@Test
 	void testAtualizarCarro() {
 		Carro carro = service.buscarPorId(carroId).orElseThrow();
-		carro.setPreco(150000.00); // Atualizando o preço
-
+		carro.setPreco(150000.00);
 		Carro updatedCarro = service.salvar(carro);
-
 		assertThat(updatedCarro.getPreco()).isEqualTo(150000.00);
 	}
 
 	@Test
 	void testExcluirCarro() {
 		service.excluir(carroId);
-
 		Optional<Carro> carro = service.buscarPorId(carroId);
-
 		assertThat(carro).isEmpty();
 	}
+
+	@Test
+	void testExcluirCarroInexistente() {
+		UUID idInvalido = UUID.randomUUID();
+		service.excluir(idInvalido);
+	}
+
+	@Test
+	void testCriarCarroComDadosInvalidos() {
+		Carro carro = new Carro();
+		assertThrows(Exception.class, () -> service.salvar(carro));
+	}
+
+	@Test
+	void testBuscarPorModelo() {
+		List<Carro> carros = repository.findByModelo("Corolla");
+		assertThat(carros).isNotEmpty();
+	}
+
+	@Test
+	void testFiltrarPorTipo() {
+		List<Carro> carros = repository.findByTipo("Combustão");
+		assertThat(carros).isNotEmpty();
+	}
+
+	@Test
+	void testCriarVariosCarrosEVerificarQuantidade() {
+		Carro carro2 = new Carro("Ford", "Mustang", 2021, 450, 8.5, "Combustão", 300000.00);
+		service.salvar(carro2);
+		List<Carro> carros = service.listarTodos();
+		assertThat(carros.size()).isEqualTo(2);
+	}
+
+	@Test
+	void testCriarEBuscarPeloAnoMaisRecente() {
+		Carro carro = new Carro("Tesla", "Model S", 2024, 1020, 18.0, "Elétrico", 500000.00);
+		service.salvar(carro);
+		List<Carro> carros = repository.findByAno(2024);
+		assertThat(carros).isNotEmpty();
+	}
+
+	@Test
+	void testCriarCarroEletricoEVerificarEconomiaMinima() {
+		Carro carro = new Carro("Nissan", "Leaf", 2023, 150, 25.0, "Elétrico", 200000.00);
+		service.salvar(carro);
+		assertThat(carro.getEconomia()).isGreaterThan(20.0);
+	}
 }
+

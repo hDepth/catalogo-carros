@@ -1,4 +1,7 @@
-/*package checkp.jadv.demo.Config;
+/*
+Tentativa falha de inserir automaticamente 25 inserts no h2database
+
+package checkp.jadv.demo.Config;
 
 import checkp.jadv.demo.domainmodel.Carro;
 import checkp.jadv.demo.Repository.CarroRepository;
