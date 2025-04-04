@@ -30,14 +30,23 @@ A API utiliza o H2 Database como banco de dados em memória. Para facilitar a in
 
 Caso deseje utilizar outro banco de dados, edite as configurações no arquivo application.properties:
 spring.datasource.url=jdbc:h2:mem:carcatalog
+
 spring.datasource.driverClassName=org.h2.Driver
+
 spring.datasource.username=sa
+
 spring.datasource.password=
+
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
 spring.h2.console.enabled=true
+
 spring.h2.console.path=/h2-console
+
 spring.datasource.initialization-mode=always
+
 spring.sql.init.mode=always
+
 spring.jpa.hibernate.ddl-auto=create
 
 Caso prefira um banco persistente (exemplo: MySQL, PostgreSQL), substitua as configurações acima pelos dados do seu banco e desative o data.sql.
